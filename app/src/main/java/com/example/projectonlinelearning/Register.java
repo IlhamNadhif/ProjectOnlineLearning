@@ -39,6 +39,7 @@ public class Register extends AppCompatActivity {
                 }else {
                     Intent i = new Intent(Register.this, Login.class);
                     startActivity(i);
+                    finish();
                 }
             }
         });

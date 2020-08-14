@@ -9,20 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ControlClass">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ControlClass">
+
+        </activity>
         <activity
             android:name=".SecondActivity"
             android:label="Details"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".Register" />
-        <activity android:name=".Login">
-        </activity>
+        <activity android:name=".Login"></activity>
         <activity android:name=".MainActivity" />
     </application>
 
