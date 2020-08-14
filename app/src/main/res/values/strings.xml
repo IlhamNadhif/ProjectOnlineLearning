@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Makanan Nusantara</string>
+
+    <string-array name="NamaMakanan">
+        <item>Gudeg</item>
+        <item>Kerak Telor</item>
+        <item>Soto Kudus</item>
+        <item>Lumpia</item>
+        <item>Lentog Tanjung</item>
+        <item>Kerupuk Tengiri</item>
+        <item>Jenang</item>
+        <item>Mie Aceh</item>
+        <item>Ayam Betutu</item>
+    </string-array>
+
+    <string-array name="Asal">
+        <item>Yogyakarta</item>
+        <item>Jakarta</item>
+        <item>Kudus</item>
+        <item>Semarang</item>
+        <item>Kudus</item>
+        <item>Cilacap</item>
+        <item>Kudus</item>
+        <item>Aceh</item>
+        <item>Bali</item>
+    </string-array>
+
+    <string-array name="Deskripsi">
+        <item>GudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudegGudeg</item>
+    </string-array>
+</resources>
