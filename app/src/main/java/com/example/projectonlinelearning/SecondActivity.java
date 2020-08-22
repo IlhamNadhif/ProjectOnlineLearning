@@ -31,10 +31,10 @@ public class SecondActivity extends AppCompatActivity {
 
     private void getData(){
         if(getIntent().hasExtra("myImage") && getIntent().hasExtra("data1") &&
-                getIntent().hasExtra("data2")){
+                getIntent().hasExtra("description")){
 
             data1 = getIntent().getStringExtra("data1");
-            data2 = getIntent().getStringExtra("data2");
+            data2 = getIntent().getStringExtra("description");
             myImage = getIntent().getIntExtra("myImage", 1);
 
         }else{

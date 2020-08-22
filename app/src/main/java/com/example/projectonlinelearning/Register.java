@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
     EditText user,pass,email;
     Button btnmasuk;
+    RadioGroup radioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,22 +23,23 @@ public class Register extends AppCompatActivity {
         email = findViewById(R.id.txtemailreg);
         user = findViewById(R.id.txtusernamereg);
         pass = findViewById(R.id.txtpasswordreg);
+        radioGroup = findViewById(R.id.RadioGroup);
         btnmasuk = findViewById(R.id.btnreg);
 
         btnmasuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (email.getText().toString().isEmpty() && user.getText().toString().isEmpty() && pass.getText().toString().isEmpty()){
-                    email.setError("tidak boleh kosong !");
-                    user.setError("tidak boleh kosong !");
-                    pass.setError("tidak boleh kosong !");
+                    email.setError("Masukkan Email !");
+                    user.setError("Masukkan Username !");
+                    pass.setError("Masukkan Password !");
                 }else if (email.getText().toString().isEmpty() || user.getText().toString().isEmpty() || pass.getText().toString().isEmpty()){
                     if (email.getText().toString().isEmpty()){
-                        email.setError("tidak boleh kosong !");
+                        email.setError("Masukkan Email !");
                     }else if (user.getText().toString().isEmpty()) {
-                        user.setError("tidak boleh kosong !");
+                        user.setError("Masukkan Username !");
                     }else if (pass.getText().toString().isEmpty()) {
-                        pass.setError("tidak boleh kosong !");}
+                        pass.setError("Masukkan Password !");}
                 }else {
                     Intent i = new Intent(Register.this, Login.class);
                     startActivity(i);

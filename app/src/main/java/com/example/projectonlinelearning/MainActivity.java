@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
-    String s1[], s2[];
+    String s1[], s2[], s3[];
     int images[] = {R.drawable.gudeg, R.drawable.keraktelor, R.drawable.sotokudus, R.drawable.lumpia,
             R.drawable.lentog, R.drawable.kerupuktengiri, R.drawable.jenang, R.drawable.mieaceh,
             R.drawable.ayambetutu};
@@ -23,9 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
         s1 = getResources().getStringArray(R.array.NamaMakanan);
         s2 = getResources().getStringArray(R.array.Asal);
+        s3 = getResources().getStringArray(R.array.Deskripsi);
 
 
-        RVadaptor rVadaptor = new RVadaptor(this, s1, s2, images);
+        RVadaptor rVadaptor = new RVadaptor(this, s1, s2, s3, images);
         recyclerView.setAdapter(rVadaptor);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

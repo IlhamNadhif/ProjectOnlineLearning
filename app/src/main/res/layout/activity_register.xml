@@ -4,53 +4,50 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:padding="4dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Register">
 
     <TextView
-        android:layout_gravity="center"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REGISTRASI"
-        android:textSize="30dp"
-        android:textColor="#1D87DC"
-        android:gravity="center"
-        android:layout_marginTop="40dp"
+        android:textSize="25sp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginBottom="24dp"
         />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="320dp"
-        android:layout_gravity="center"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:errorEnabled="true">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtemailreg"
-            android:hint="Email"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+        android:text="Email :"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="320dp"
-        android:layout_gravity="center"
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:errorEnabled="true">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtusernamereg"
-            android:hint="Username"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+        android:id="@+id/txtemailreg"
+        android:hint="Email"/>
+
+    <TextView
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Username :"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtusernamereg"
+        android:hint="Username"/>
+
+    <TextView
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password :"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="320dp"
-        android:layout_gravity="center"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:errorEnabled="true"
         app:passwordToggleEnabled="true">
@@ -63,16 +60,32 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btnreg"
-        android:layout_width="222dp"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/login_button_bk"
-        android:text="registrasi"
-        android:textColor="#FFFFFF" />
+        android:text="Gender :"/>
 
+    <RadioGroup
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RadioGroup">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"/>
+    </RadioGroup>
+
+    <Button
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REGISTRASI"
+        android:textSize="17dp"
+        android:id="@+id/btnreg"/>
 </LinearLayout>

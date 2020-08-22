@@ -14,14 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class RVadaptor extends RecyclerView.Adapter<RVadaptor.MyViewHolder> {
 
-    String data1[], data2[];
+    String data1[], data2[], description[];
     int images[];
     Context context;
 
-    public RVadaptor(Context ct, String[] s1, String[] s2, int img[]){
+    public RVadaptor(Context ct, String[] s1, String[] s2, String[] s3, int img[]){
         context = ct;
         data1 = s1;
         data2 = s2;
+        description = s3;
         images = img;
     }
 
@@ -45,6 +46,7 @@ public class RVadaptor extends RecyclerView.Adapter<RVadaptor.MyViewHolder> {
                 Intent intent = new Intent(context, SecondActivity.class);
                 intent.putExtra("data1", data1[position]);
                 intent.putExtra("data2", data2[position]);
+                intent.putExtra("description", description[position]);
                 intent.putExtra("myImage", images[position]);
                 context.startActivity(intent);
             }
