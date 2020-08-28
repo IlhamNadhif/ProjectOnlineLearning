@@ -8,7 +8,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity {
-
     ImageView mainImageview;
     TextView tittle, description;
 
@@ -32,6 +31,8 @@ public class SecondActivity extends AppCompatActivity {
     private void getData(){
         if(getIntent().hasExtra("myImage") && getIntent().hasExtra("data1") &&
                 getIntent().hasExtra("description")){
+
+
 
             data1 = getIntent().getStringExtra("data1");
             data2 = getIntent().getStringExtra("description");

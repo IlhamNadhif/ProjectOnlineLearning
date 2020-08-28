@@ -47,7 +47,7 @@ public class Login extends AppCompatActivity {
                     editor.apply();;
                     //menuju ke activity yang dituju
 
-                    Intent i = new Intent(Login.this, mainMenu.class);
+                    Intent i = new Intent(Login.this, MainMenu.class);
                     startActivity(i);
                     finish();
                 }
