@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Makanan Nusantara</string>
+    <string name="app_name">ProjectOnlineLearning</string>
 
     <string-array name="NamaMakanan">
         <item>Gudeg</item>

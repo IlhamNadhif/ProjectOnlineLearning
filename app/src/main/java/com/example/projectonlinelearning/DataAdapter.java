@@ -50,6 +50,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
         holder.txtNama.setText(dataList.get(position).getOriginal_title());
         holder.txtNpm.setText(dataList.get(position).getOverview());
         Log.d("makananku", "onBindViewHolder: "+dataList.get(position).getPoster_path());
+        //Pakai glade untuk menampilkan data dari gambat url/ permission / grddle
         Glide.with(holder.itemView)
                 .load(dataList.get(position).getPoster_path())
                 .override(Target.SIZE_ORIGINAL)
