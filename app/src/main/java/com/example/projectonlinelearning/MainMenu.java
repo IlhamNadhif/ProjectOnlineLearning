@@ -9,25 +9,28 @@ import android.view.View;
 
 public class MainMenu extends AppCompatActivity {
 
-    CardView action;
-    CardView horor;
-    CardView comedy;
-    CardView drama;
+    CardView listproduct;
+    CardView listproductfav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        action = (CardView)findViewById(R.id.action);
-        horor = (CardView)findViewById(R.id.horor);
-        comedy = (CardView)findViewById(R.id.comedy);
-        drama = (CardView)findViewById(R.id.drama);
+        listproduct = (CardView)findViewById(R.id.listproduct);
+        listproductfav = (CardView)findViewById(R.id.listproductfavorit);
 
-        action.setOnClickListener(new View.OnClickListener() {
+        listproduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), ListData.class));
+            }
+        });
+
+        listproductfav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ListDataFavourite.class));
             }
         });
     }

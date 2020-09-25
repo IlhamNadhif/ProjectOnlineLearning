@@ -9,6 +9,16 @@ public class Model {
     String overview;
     int vote_count;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    int id;
+
     public String getOriginal_title() {
         return original_title;
     }

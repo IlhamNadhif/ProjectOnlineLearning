@@ -7,17 +7,8 @@
     android:orientation="vertical"
     tools:context=".MainMenu">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
             <androidx.cardview.widget.CardView
-                android:id="@+id/action"
+                android:id="@+id/listproduct"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:layout_margin="20dp"
@@ -51,7 +42,7 @@
                             android:marqueeRepeatLimit="marquee_forever"
                             android:padding="10dp"
                             android:singleLine="true"
-                            android:text="Action"
+                            android:text="List Product"
                             android:textColor="#000000"
                             tools:targetApi="lollipop" />
 
@@ -62,7 +53,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/horor"
+                android:id="@+id/listproductfavorit"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:layout_margin="20dp"
@@ -94,7 +85,7 @@
                             android:marqueeRepeatLimit="marquee_forever"
                             android:padding="10dp"
                             android:singleLine="true"
-                            android:text="Horror"
+                            android:text="Lihat Product Favoritku"
                             android:textColor="#000000"
                             tools:targetApi="lollipop" />
 
@@ -103,93 +94,5 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/comedy"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_margin="20dp"
-                android:layout_marginBottom="1dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="30dp"
-                app:contentPadding="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                        <TextView
-                            android:id="@+id/articleName3"
-                            style="@android:style/TextAppearance.Medium"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentLeft="true"
-                            android:elevation="3dp"
-                            android:ellipsize="marquee"
-                            android:focusable="true"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:padding="10dp"
-                            android:singleLine="true"
-                            android:text="Comedy"
-                            android:textColor="#000000"
-                            tools:targetApi="lollipop" />
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/drama"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_margin="20dp"
-                android:layout_marginBottom="1dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="30dp"
-                app:contentPadding="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                        <TextView
-                            android:id="@+id/articleName4"
-                            style="@android:style/TextAppearance.Medium"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentLeft="true"
-                            android:elevation="3dp"
-                            android:ellipsize="marquee"
-                            android:focusable="true"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:padding="10dp"
-                            android:singleLine="true"
-                            android:text="Drama"
-                            android:textColor="#000000"
-                            tools:targetApi="lollipop" />
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-    </ScrollView>
 
 </LinearLayout>
