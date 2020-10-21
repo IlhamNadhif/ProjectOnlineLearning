@@ -57,6 +57,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
                 .placeholder(R.mipmap.ic_launcher)
                 .into(holder.ivprofile);
 
+
     }
 
     @Override
@@ -96,6 +97,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
         }
 
     }
+
     private final MenuItem.OnMenuItemClickListener onEditMenu = new MenuItem.OnMenuItemClickListener() {
         @Override
         public boolean onMenuItemClick(MenuItem item) {

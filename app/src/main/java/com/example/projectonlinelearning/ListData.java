@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
@@ -27,12 +29,18 @@ public class ListData extends AppCompatActivity {
     private DataAdapter adapter;
     private ArrayList<Model> DataArrayList; //kit add kan ke adapter
     private ImageView tambah_data;
+    private ProgressBar PrgrsBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_data);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+
+        PrgrsBar = (ProgressBar) findViewById(R.id.progresBar);
+        PrgrsBar.setVisibility(View.VISIBLE);
+        recyclerView.setVisibility(View.INVISIBLE);
+
         //addData();
         addDataOnline();
     }
@@ -112,7 +120,7 @@ public class ListData extends AppCompatActivity {
                                     intent.putExtra("deskripsi",movie.overview);
                                     intent.putExtra("path",movie.poster_path);
                                     startActivity(intent);
-                                    Toast.makeText(ListData.this, ""+position, Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(ListData.this, ""+position, Toast.LENGTH_SHORT).show();
                                 }
 
                                 @Override
@@ -136,5 +144,7 @@ public class ListData extends AppCompatActivity {
                         Log.d("errorku", "onError errorDetail : " + error.getErrorDetail());
                     }
                 });
+
+        recyclerView.setVisibility(View.VISIBLE);
     }
 }

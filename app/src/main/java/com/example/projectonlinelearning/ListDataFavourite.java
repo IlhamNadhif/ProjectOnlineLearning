@@ -3,7 +3,9 @@ package com.example.projectonlinelearning;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +35,7 @@ public class ListDataFavourite extends AppCompatActivity {
     private DataAdapterFavourite adapter;
     private List<ModelMovieRealm> DataArrayList; //kit add kan ke adapter
     private ImageView tambah_data;
+    private ProgressBar PrgrsBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,10 @@ public class ListDataFavourite extends AppCompatActivity {
         setContentView(R.layout.list_data);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         DataArrayList = new ArrayList<>();
+
+        PrgrsBar = (ProgressBar) findViewById(R.id.progresBar);
+        PrgrsBar.setVisibility(View.GONE);
+
 
         // Setup Realm
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
@@ -49,7 +56,16 @@ public class ListDataFavourite extends AppCompatActivity {
         adapter = new DataAdapterFavourite(DataArrayList, new DataAdapterFavourite.Callback() {
             @Override
             public void onClick(int position) {
+                //intent ke detail movie
+                Intent move = new Intent(getApplicationContext(), DetailFavourite.class);
+                move.putExtra("title",DataArrayList.get(position).getJudul());
+                // picture, desc, release, dll
+                move.putExtra("judul",DataArrayList.get(position).getJudul());
+                move.putExtra("path",DataArrayList.get(position).getPath());
+                move.putExtra("date",DataArrayList.get(position).getReleaseDate());
+                move.putExtra("deskripsi",DataArrayList.get(position).getDesc());
 
+                startActivity(move);
             }
 
             @Override
@@ -62,6 +78,7 @@ public class ListDataFavourite extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
     }
+
 
 
 }
