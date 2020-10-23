@@ -3,11 +3,13 @@ package com.example.projectonlinelearning;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +18,7 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -79,6 +82,29 @@ public class ListDataFavourite extends AppCompatActivity {
 
     }
 
+//    @Override
+//    public boolean onContextItemSelected(@NonNull MenuItem item) {
+//
+//        switch (item.getItemId()) {
+//            case 1:
+//                //Do stuff
+//                displayMassage("halo");
+//                return true;
+//
+//            case 2:
+//                //Do stuff
+//                displayMassage("halo..");
+//                adapter.RemoveItem(item.getGroupId());
+//                return true;
+//
+//            default:
+//                return super.onContextItemSelected(item);
+//        }
+//    }
+//
+//    private void displayMassage(String massage){
+//        Snackbar.make(findViewById(R.id.rootId), massage, Snackbar.LENGTH_SHORT).show();
+//    }
 
 
 }
