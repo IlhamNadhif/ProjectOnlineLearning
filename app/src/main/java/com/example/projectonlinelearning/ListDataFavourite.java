@@ -48,7 +48,7 @@ public class ListDataFavourite extends AppCompatActivity {
         DataArrayList = new ArrayList<>();
 
         PrgrsBar = (ProgressBar) findViewById(R.id.progresBar);
-        PrgrsBar.setVisibility(View.GONE);
+        PrgrsBar.setVisibility(View.INVISIBLE);
 
 
         // Setup Realm

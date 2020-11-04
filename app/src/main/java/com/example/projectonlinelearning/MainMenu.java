@@ -6,11 +6,13 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainMenu extends AppCompatActivity {
 
     CardView listproduct;
     CardView listproductfav;
+    Button logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +35,7 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), ListDataFavourite.class));
             }
         });
+
+
     }
 }

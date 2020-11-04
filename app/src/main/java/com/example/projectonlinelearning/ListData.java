@@ -38,8 +38,6 @@ public class ListData extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
         PrgrsBar = (ProgressBar) findViewById(R.id.progresBar);
-        PrgrsBar.setVisibility(View.VISIBLE);
-        recyclerView.setVisibility(View.INVISIBLE);
 
         //addData();
         addDataOnline();
@@ -79,6 +77,7 @@ public class ListData extends AppCompatActivity {
     }
 
     void addDataOnline() {
+        PrgrsBar.setVisibility(View.VISIBLE);
         AndroidNetworking.get("https://api.themoviedb.org/3/movie/now_playing?api_key=f9882f03ebbec0cd3cf99a20006d0a51")
                 .setTag("test")
                 .setPriority(Priority.LOW)
@@ -131,6 +130,7 @@ public class ListData extends AppCompatActivity {
                             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListData.this);
                             recyclerView.setLayoutManager(layoutManager);
                             recyclerView.setAdapter(adapter);
+                            PrgrsBar.setVisibility(View.INVISIBLE);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -138,6 +138,7 @@ public class ListData extends AppCompatActivity {
 
                     @Override
                     public void onError(ANError error) {
+                        PrgrsBar.setVisibility(View.INVISIBLE);
                         // handle error
                         Log.d("errorku", "onError errorCode : " + error.getErrorCode());
                         Log.d("errorku", "onError errorBody : " + error.getErrorBody());
@@ -145,6 +146,5 @@ public class ListData extends AppCompatActivity {
                     }
                 });
 
-        recyclerView.setVisibility(View.VISIBLE);
     }
 }
