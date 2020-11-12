@@ -13,7 +13,7 @@
         android:layout_width="192dp"
         android:layout_height="190dp"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/logologin" />
 
     <TextView
@@ -23,7 +23,7 @@
         android:textSize="20dp"
         android:textColor="#000000"
         android:gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -79,6 +79,13 @@
         android:layout_height="wrap_content"
         android:onClick="viewRegisterClicked"
         tools:ignore="OnClick" />
+
+    <com.google.android.gms.common.SignInButton
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>
