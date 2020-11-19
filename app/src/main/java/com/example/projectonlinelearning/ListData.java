@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,15 +30,18 @@ public class ListData extends AppCompatActivity {
     private DataAdapter adapter;
     private ArrayList<Model> DataArrayList; //kit add kan ke adapter
     private ImageView tambah_data;
-    private ProgressBar PrgrsBar;
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_data);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
-        PrgrsBar = (ProgressBar) findViewById(R.id.progresBar);
+        dialog = new ProgressDialog(ListData.this);
 
         //addData();
         addDataOnline();
@@ -77,7 +81,10 @@ public class ListData extends AppCompatActivity {
     }
 
     void addDataOnline() {
-        PrgrsBar.setVisibility(View.VISIBLE);
+
+        dialog.setMessage("Sedang memproses data");
+        dialog.show();
+
         AndroidNetworking.get("https://api.themoviedb.org/3/movie/now_playing?api_key=f9882f03ebbec0cd3cf99a20006d0a51")
                 .setTag("test")
                 .setPriority(Priority.LOW)
@@ -130,15 +137,20 @@ public class ListData extends AppCompatActivity {
                             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListData.this);
                             recyclerView.setLayoutManager(layoutManager);
                             recyclerView.setAdapter(adapter);
-                            PrgrsBar.setVisibility(View.INVISIBLE);
+
+                            if (dialog.isShowing()) {
+                                dialog.dismiss();
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            if (dialog.isShowing()) {
+                                dialog.dismiss();
+                            }
                         }
                     }
 
                     @Override
                     public void onError(ANError error) {
-                        PrgrsBar.setVisibility(View.INVISIBLE);
                         // handle error
                         Log.d("errorku", "onError errorCode : " + error.getErrorCode());
                         Log.d("errorku", "onError errorBody : " + error.getErrorBody());

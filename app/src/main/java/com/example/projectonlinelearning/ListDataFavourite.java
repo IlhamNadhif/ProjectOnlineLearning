@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -37,18 +38,22 @@ public class ListDataFavourite extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DataAdapterFavourite adapter;
     private List<ModelMovieRealm> DataArrayList; //kit add kan ke adapter
-    private ImageView tambah_data;
-    private ProgressBar PrgrsBar;
+    TextView tvnodata;
+
+    //private ProgressBar PrgrsBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_data);
+
+        tvnodata = (TextView) findViewById(R.id.tvnodata);
+
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         DataArrayList = new ArrayList<>();
 
-        PrgrsBar = (ProgressBar) findViewById(R.id.progresBar);
-        PrgrsBar.setVisibility(View.INVISIBLE);
+        //PrgrsBar = (ProgressBar) findViewById(R.id.progresBar);
+        //PrgrsBar.setVisibility(View.INVISIBLE);
 
 
         // Setup Realm
@@ -56,29 +61,38 @@ public class ListDataFavourite extends AppCompatActivity {
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
         DataArrayList = realmHelper.getAllMahasiswa();
-        adapter = new DataAdapterFavourite(DataArrayList, new DataAdapterFavourite.Callback() {
-            @Override
-            public void onClick(int position) {
-                //intent ke detail movie
-                Intent move = new Intent(getApplicationContext(), DetailFavourite.class);
-                move.putExtra("title",DataArrayList.get(position).getJudul());
-                // picture, desc, release, dll
-                move.putExtra("judul",DataArrayList.get(position).getJudul());
-                move.putExtra("path",DataArrayList.get(position).getPath());
-                move.putExtra("date",DataArrayList.get(position).getReleaseDate());
-                move.putExtra("deskripsi",DataArrayList.get(position).getDesc());
 
-                startActivity(move);
-            }
+        if (DataArrayList.size() == 0){
+            tvnodata.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+        }else{
+            tvnodata.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
+            adapter = new DataAdapterFavourite(DataArrayList, new DataAdapterFavourite.Callback() {
+                @Override
+                public void onClick(int position) {
+                    //intent ke detail movie
+                    Intent move = new Intent(getApplicationContext(), DetailFavourite.class);
+                    move.putExtra("title",DataArrayList.get(position).getJudul());
+                    // picture, desc, release, dll
+                    move.putExtra("judul",DataArrayList.get(position).getJudul());
+                    move.putExtra("path",DataArrayList.get(position).getPath());
+                    move.putExtra("date",DataArrayList.get(position).getReleaseDate());
+                    move.putExtra("deskripsi",DataArrayList.get(position).getDesc());
 
-            @Override
-            public void test() {
+                    startActivity(move);
+                }
 
-            }
-        });
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListDataFavourite.this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+                @Override
+                public void test() {
+
+                }
+            });
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListDataFavourite.this);
+            recyclerView.setLayoutManager(layoutManager);
+            recyclerView.setAdapter(adapter);
+        }
+
 
     }
 

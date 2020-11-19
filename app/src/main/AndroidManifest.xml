@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DetailFavourite"></activity>
-        <activity android:name=".DetailMovie" />
+        <activity android:name=".DetailMovie">
+            android:parentActivityName=".ListData"
+        </activity>
         <activity android:name=".MainMenu">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
@@ -38,7 +40,9 @@
             android:parentActivityName=".ListData" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name=".ListData" />
+        <activity android:name=".ListData">
+
+        </activity>
         <activity android:name=".ListDataFavourite" />
     </application>
 

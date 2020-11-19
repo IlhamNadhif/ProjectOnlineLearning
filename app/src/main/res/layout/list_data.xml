@@ -7,16 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".ListData">
 
-
-    <ProgressBar
-        android:id="@+id/progresBar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_centerHorizontal="true"
+    <TextView
+        android:id="@+id/tvnodata"
+        android:textSize="100px"
+        android:text="Tidak ada data"
         android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progresBar"-->
+<!--        style="?android:attr/progressBarStyleLarge"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"/>-->
+
     <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
