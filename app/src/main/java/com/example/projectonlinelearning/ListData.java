@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
@@ -31,17 +32,21 @@ public class ListData extends AppCompatActivity {
     private ArrayList<Model> DataArrayList; //kit add kan ke adapter
     private ImageView tambah_data;
     ProgressDialog dialog;
+    TextView tvnodata;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_data);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
         dialog = new ProgressDialog(ListData.this);
+
+        tvnodata = (TextView) findViewById(R.id.tvnodata);
+        tvnodata.setVisibility(View.GONE);
+        recyclerView.setVisibility(View.VISIBLE);
 
         //addData();
         addDataOnline();
